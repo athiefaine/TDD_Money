@@ -12,5 +12,5 @@
 * ~~Common equals~~
 * Common times
 * ~~Compare Dollars with Euros~~
-* notion of Currency ?
+* ~~notion of Currency ?~~
 * delete test euro multiplication ?
