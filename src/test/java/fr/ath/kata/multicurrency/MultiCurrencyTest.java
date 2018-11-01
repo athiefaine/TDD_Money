@@ -8,29 +8,29 @@ public class MultiCurrencyTest {
 
     @Test
     public void should_test_dollar_multiplication() {
-        Dollar fiveDollars = new Dollar(5);
+        Money fiveDollars = Money.dollar(5);
 
-        assertThat(fiveDollars.times(2)).isEqualTo(new Dollar(10));
+        assertThat(fiveDollars.times(2)).isEqualTo(Money.dollar(10));
 
-        assertThat(fiveDollars.times(3)).isEqualTo(new Dollar(15));
+        assertThat(fiveDollars.times(3)).isEqualTo(Money.dollar(15));
     }
 
     @Test
     public void should_test_euro_multiplication() {
-        Euro fiveEuros = new Euro(5);
+        Money fiveEuros = Money.euro(5);
 
-        assertThat(fiveEuros.times(2)).isEqualTo(new Euro(10));
+        assertThat(fiveEuros.times(2)).isEqualTo(Money.euro(10));
 
-        assertThat(fiveEuros.times(3)).isEqualTo(new Euro(15));
+        assertThat(fiveEuros.times(3)).isEqualTo(Money.euro(15));
     }
 
     @Test
     public void should_test_equality() {
-        assertThat(new Dollar(5)).isEqualTo(new Dollar(5));
-        assertThat(new Dollar(5)).isNotEqualTo(new Dollar(6));
-        assertThat(new Euro(5)).isEqualTo(new Euro(5));
-        assertThat(new Euro(5)).isNotEqualTo(new Euro(6));
-        assertThat(new Dollar(5)).isNotEqualTo(new Euro(5));
+        assertThat(Money.dollar(5)).isEqualTo(Money.dollar(5));
+        assertThat(Money.dollar(5)).isNotEqualTo(Money.dollar(6));
+        assertThat(Money.euro(5)).isEqualTo(Money.euro(5));
+        assertThat(Money.euro(5)).isNotEqualTo(Money.euro(6));
+        assertThat(Money.dollar(5)).isNotEqualTo(Money.euro(5));
     }
 
 }
