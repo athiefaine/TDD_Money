@@ -39,4 +39,9 @@ public class MultiCurrencyTest {
         assertThat(Money.dollar(5)).isNotEqualTo(Money.euro(5));
     }
 
+    @Test
+    public void should_test_different_class_equality() {
+        assertThat(new Money(10, "EUR")).isEqualTo(new Euro(10, "EUR"));
+    }
+
 }

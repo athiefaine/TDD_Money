@@ -1,6 +1,6 @@
 package fr.ath.kata.multicurrency;
 
-public abstract class Money {
+public class Money {
     protected int amount;
     protected String currency;
 
@@ -13,11 +13,13 @@ public abstract class Money {
         return currency;
     }
 
-    public abstract Money times(int multiplier);
+    public  Money times(int multiplier) {
+        return new Money(amount * multiplier, currency);
+    }
 
     public boolean equals(Object obj) {
         Money anotherMoney = (Money) obj;
-        return getClass().equals(anotherMoney.getClass()) &&
+        return currency.equals(anotherMoney.currency) &&
                 amount == anotherMoney.amount;
     }
 
