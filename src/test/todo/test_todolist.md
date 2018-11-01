@@ -8,9 +8,9 @@
 * Equals null
 * Equals object
 * ~~€5 * 2 = €10~~
-* Dollar/Euro duplication
+* ~~Dollar/Euro duplication~~
 * ~~Common equals~~
 * ~~Common times~~
 * ~~Compare Dollars with Euros~~
 * ~~notion of Currency ?~~
-* delete test euro multiplication ?
+* ~~delete test euro multiplication ?~~
