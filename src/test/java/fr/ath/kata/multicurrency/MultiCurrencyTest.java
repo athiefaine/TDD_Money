@@ -3,6 +3,8 @@ package fr.ath.kata.multicurrency;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 public class MultiCurrencyTest {
 
     @Test
@@ -10,11 +12,17 @@ public class MultiCurrencyTest {
         Dollar fiveDollars = new Dollar(5);
 
         Dollar tenDollars = fiveDollars.times(2);
-        Assertions.assertThat(tenDollars.amount).isEqualTo(10);
+        assertThat(tenDollars.amount).isEqualTo(10);
 
         Dollar fifteenDollars = fiveDollars.times(3);
-        Assertions.assertThat(fifteenDollars.amount).isEqualTo(15);
+        assertThat(fifteenDollars.amount).isEqualTo(15);
 
+    }
+
+    @Test
+    public void shoud_two_dollars_with_same_amount_be_equal() {
+        assertThat(new Dollar(5)).isEqualTo(new Dollar(5));
+        assertThat(new Dollar(5)).isNotEqualTo(new Dollar(6));
     }
 
 }

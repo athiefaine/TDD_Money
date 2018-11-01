@@ -3,3 +3,7 @@
 * amount must be private
 * ~~side-effects for Dollar, it is mutable ?~~
 * money rounding ?
+* ~~equals()~~
+* hashCode()
+* Equals null
+* Equals object
