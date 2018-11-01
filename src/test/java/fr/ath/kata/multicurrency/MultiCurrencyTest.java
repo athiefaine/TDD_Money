@@ -1,6 +1,5 @@
 package fr.ath.kata.multicurrency;
 
-import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -11,12 +10,9 @@ public class MultiCurrencyTest {
     public void should_return_ten_dollars_when_asked_twice_five_dollars () {
         Dollar fiveDollars = new Dollar(5);
 
-        Dollar tenDollars = fiveDollars.times(2);
-        assertThat(tenDollars.amount).isEqualTo(10);
+        assertThat(fiveDollars.times(2)).isEqualTo(new Dollar(10));
 
-        Dollar fifteenDollars = fiveDollars.times(3);
-        assertThat(fifteenDollars.amount).isEqualTo(15);
-
+        assertThat(fiveDollars.times(3)).isEqualTo(new Dollar(15));
     }
 
     @Test
