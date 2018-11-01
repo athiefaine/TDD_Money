@@ -30,6 +30,7 @@ public class MultiCurrencyTest {
         assertThat(new Dollar(5)).isNotEqualTo(new Dollar(6));
         assertThat(new Euro(5)).isEqualTo(new Euro(5));
         assertThat(new Euro(5)).isNotEqualTo(new Euro(6));
+        assertThat(new Dollar(5)).isNotEqualTo(new Euro(5));
     }
 
 }

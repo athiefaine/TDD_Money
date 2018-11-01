@@ -11,3 +11,4 @@
 * Dollar/Euro duplication
 * ~~Common equals~~
 * Common times
+* ~~Compare Dollars with Euros~~
