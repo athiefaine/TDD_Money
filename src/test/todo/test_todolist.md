@@ -7,3 +7,7 @@
 * hashCode()
 * Equals null
 * Equals object
+* ~~€5 * 2 = €10~~
+* Dollar/Euro duplication
+* Common equals
+* Common times
