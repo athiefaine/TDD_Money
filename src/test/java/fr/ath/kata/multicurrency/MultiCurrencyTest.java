@@ -28,6 +28,8 @@ public class MultiCurrencyTest {
     public void should_test_equality() {
         assertThat(new Dollar(5)).isEqualTo(new Dollar(5));
         assertThat(new Dollar(5)).isNotEqualTo(new Dollar(6));
+        assertThat(new Euro(5)).isEqualTo(new Euro(5));
+        assertThat(new Euro(5)).isNotEqualTo(new Euro(6));
     }
 
 }

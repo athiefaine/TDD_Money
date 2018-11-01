@@ -1,7 +1,6 @@
 package fr.ath.kata.multicurrency;
 
-public class Euro {
-    private int amount;
+public class Euro extends Money {
 
     public Euro(int  amount) {
         this.amount = amount;
@@ -11,9 +10,4 @@ public class Euro {
          return new Euro(amount * multiplier);
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        Euro anotherEuro = (Euro) obj;
-        return amount == anotherEuro.amount;
-    }
 }
