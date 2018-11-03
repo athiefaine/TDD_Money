@@ -51,9 +51,22 @@ public class MultiCurrencyTest {
     }
 
     @Test
+    public void should_test_reduce_with_different_currencies() {
+        Bank bank = new Bank();
+        bank.addRate("USD", "EUR", 2);
+        Money result = bank.reduce(Money.dollar(4), "EUR");
+        assertThat(result).isEqualTo(Money.euro(2));
+    }
+
+    @Test
     public void should_test_currency() {
         assertThat(Money.dollar(1).getCurrency()).isEqualTo("USD");
         assertThat(Money.euro(1).getCurrency()).isEqualTo("EUR");
+    }
+
+    @Test
+    public void should_test_identity_rate() {
+        assertThat(new Bank().rate("USD", "USD")).isEqualTo(1);
     }
 
     @Test

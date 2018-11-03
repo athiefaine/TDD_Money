@@ -22,8 +22,9 @@ public class Money implements Expression{
     }
 
     @Override
-    public Money reduce(String targetCurrency) {
-        return this;
+    public Money reduce(Bank bank, String targetCurrency) {
+        int rate = bank.rate(this.currency, targetCurrency);
+        return new Money(amount / rate, targetCurrency);
     }
 
     public boolean equals(Object obj) {
