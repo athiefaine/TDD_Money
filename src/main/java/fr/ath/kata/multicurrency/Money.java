@@ -14,11 +14,16 @@ public class Money implements Expression{
     }
 
     public Expression plus(Money addend) {
-        return new Money(this.amount + addend.amount, currency);
+        return new Sum(this, addend);
     }
 
     public  Money times(int multiplier) {
         return new Money(amount * multiplier, currency);
+    }
+
+    @Override
+    public Money reduce(String targetCurrency) {
+        return this;
     }
 
     public boolean equals(Object obj) {
@@ -33,5 +38,10 @@ public class Money implements Expression{
 
     public static Money euro(int amount) {
         return new Money(amount, "EUR");
+    }
+
+    @Override
+    public String toString() {
+        return amount + " " + currency;
     }
 }

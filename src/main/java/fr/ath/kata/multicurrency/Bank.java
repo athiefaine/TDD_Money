@@ -3,7 +3,8 @@ package fr.ath.kata.multicurrency;
 public class Bank {
 
 
-    public Money reduce(Expression expression, String currency) {
-        return Money.dollar(8);
+    public Money reduce(Expression sourceExpression, String targetCurrency) {
+       return sourceExpression.reduce(targetCurrency);
     }
+
 }

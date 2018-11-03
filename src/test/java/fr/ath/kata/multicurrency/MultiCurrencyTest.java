@@ -26,6 +26,31 @@ public class MultiCurrencyTest {
     }
 
     @Test
+    public void should_test_plus_returns_sum() {
+        Money fiveDollars = Money.dollar(5);
+        Money threeDollars = Money.dollar(3);
+        Expression result = fiveDollars.plus(threeDollars);
+        Sum sum = (Sum) result;
+        assertThat(sum.augend).isEqualTo(fiveDollars);
+        assertThat(sum.addend).isEqualTo(threeDollars);
+    }
+
+    @Test
+    public void should_test_reduce_with_sum() {
+        Expression sum = new Sum(Money.dollar(3), Money.dollar(4));
+        Bank bank = new Bank();
+        Money result = bank.reduce(sum, "USD");
+        assertThat(result).isEqualTo(Money.dollar(7));
+    }
+
+    @Test
+    public void should_test_reduce_with_money() {
+        Bank bank = new Bank();
+        Money result = bank.reduce(Money.dollar(1), "USD");
+        assertThat(result).isEqualTo(Money.dollar(1));
+    }
+
+    @Test
     public void should_test_currency() {
         assertThat(Money.dollar(1).getCurrency()).isEqualTo("USD");
         assertThat(Money.euro(1).getCurrency()).isEqualTo("EUR");

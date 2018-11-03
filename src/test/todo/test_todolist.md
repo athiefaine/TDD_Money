@@ -1,5 +1,7 @@
 * $5 + 10 € = $10 if rate is 2:1
 * $5 + $3 = $8
+* return Money from $5 + $3
+* ~~Bank.reduce(Money)~~
 
 * money rounding ?
 * hashCode()
