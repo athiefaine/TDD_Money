@@ -65,6 +65,16 @@ public class MultiCurrencyTest {
     }
 
     @Test
+    public void should_test_mixed_addition() {
+        Expression fiveDollars = Money.dollar(10);
+        Expression tenEuros = Money.euro(5);
+        Bank bank = new Bank();
+        bank.addRate("USD", "EUR", 2);
+        Money result = bank.reduce((fiveDollars).plus(tenEuros), "EUR");
+        assertThat(result).isEqualTo(Money.euro(10));
+    }
+
+    @Test
     public void should_test_identity_rate() {
         assertThat(new Bank().rate("USD", "USD")).isEqualTo(1);
     }
